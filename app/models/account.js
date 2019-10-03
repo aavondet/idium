@@ -14,11 +14,6 @@ var account = new Schema({
         type : String,
         required : true
     },
-    address : {
-        type : String,
-        required : true,
-        unique: true
-    },
     username : {
         type : String,
         required : true,

@@ -16,10 +16,6 @@
                 <input type=text v-model="secret"></input>
             </div>
             <div class="form">
-                <div class="form-label">XRP Address</div>
-                <input type=text v-model="address"></input>
-            </div>
-            <div class="form">
                 <div class="form-label">ILP Name</div>
                 <input type=text v-model="ilp_name"></input>
             </div>
@@ -28,7 +24,7 @@
                 <input type=text v-model="ilp_pointer"></input>
             </div>
             <div class="form">
-                <button class="submit">Submit</button>
+                <button class="submit" @click='submit'>Submit</button>
                 <button class="close" @click='close'>Close</button>
             </div>
         </div>
@@ -37,6 +33,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Bus from '../bus.js'
 
 export default {
@@ -53,6 +50,22 @@ export default {
     methods: {
         close() {
             Bus.$emit('closeSignup')
+        },
+        submit(){
+            var url = '/account/'
+            var newUser = {
+                username: this.username,
+                pass: this.pass,
+                secret: this.secret,
+                ilp_pointer: this.ilp_pointer,
+                ilp_name: this.ilp_name,
+                address: this.address
+            };
+            axios.post(url, newUser)
+            .then((lunch) => {
+                Bus.$emit('closeSignup')
+            })
+            .catch((err) => console.log(err))
         },
     }
 }
