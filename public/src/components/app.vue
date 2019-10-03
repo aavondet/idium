@@ -15,6 +15,7 @@ import Preview from './Preview/preview.vue'
 import TrendingCollection from './trendingCollection.vue'
 import loginModal from './loginModal.vue'
 import signupModal from './signupModal.vue'
+import createSrticle from './createArticle'
 import Bus from '../bus.js'
 
 export default {
@@ -22,12 +23,14 @@ export default {
         Header,
         TrendingCollection,
         loginModal,
-        signupModal
+        signupModal,
+        createArticle
     },
     data() {
         return {
             showLogin: false,
-            showSignup: false
+            showSignup: false,
+            showArticle: false
         }
     },
     mounted() {

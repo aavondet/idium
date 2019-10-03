@@ -2,13 +2,13 @@
 <transition name="modal">
     <div class="modal-mask">
         <div class="modal-container">
-            <div class="modal-header">Login</div>
+            <div class="modal-header">New Article</div>
             <div class="form">
-                <div class="form-label">Username</div>
-                <input type=text v-model="username"></input>
+                <div class="form-label">Title</div>
+                <input type=text v-model="title"></input>
             </div>
             <div class="form">
-                <div class="form-label">Password</div>
+                <div class="form-label">Article</div>
                 <input type=text v-model="pass"></input>
             </div>
             <div class="form">
@@ -26,16 +26,13 @@ import Bus from '../bus.js'
 export default {
     data() {
         return {
-            username: '',
-            pass: ''
+            title: '',
+            article: ''
         }
     },
     methods: {
         close() {
-            Bus.$emit('closeLogin')
-        },
-        login() {
-
+            Bus.$emit('closeArticle')
         }
     }
 }

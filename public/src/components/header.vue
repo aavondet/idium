@@ -2,6 +2,7 @@
     <div id='container'>
         <span class='title'>idium</span>
         <div class="buttons">
+            <button class="article" @click="createArticle">Create Article</button>
             <button class="login" @click="showLogin">Login</button>
             <button class="signup" @click="showSignup">Signup</button>
         </div>
@@ -18,6 +19,9 @@ export default {
         },
         showSignup() {
             Bus.$emit('showSignup')
+        },
+        createArticle() {
+            Bus.$emit('createArticle')
         }
     }
 }
