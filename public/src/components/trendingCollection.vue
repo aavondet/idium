@@ -1,10 +1,8 @@
 <template>
     <div id='container'>
         <span class="title">Trending in ______</span>
-        <div class="row previews">
-            <preview class="col-sm"/>
-            <preview class="col-sm"/>
-            <preview class="col-sm"/>
+        <div class="row previews" v-for="article in articles">
+            <preview class="col-sm" :article="article/>
         </div>
     </div>
 </template>
@@ -15,6 +13,12 @@ import Preview from "./Preview/preview.vue"
 export default {
     components: {
         Preview
+    },
+    props: {
+        articles: {
+            required: true,
+            type: Array
+        }
     }
 }
 </script>

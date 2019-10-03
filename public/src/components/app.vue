@@ -1,7 +1,7 @@
 <template>
     <div id='app'>
         <Header></Header>
-        <trending-collection></trending-collection>
+        <trending-collection :articles="articles"></trending-collection>
         <trending-collection></trending-collection>
         <trending-collection></trending-collection>
         <loginModal v-if="this.showLogin"></loginModal>
@@ -31,7 +31,8 @@ export default {
             showLogin: false,
             showSignup: false,
             showArticle: false,
-            user: NULL
+            user: NULL,
+            articles: []
         }
     },
     mounted() {
@@ -42,6 +43,10 @@ export default {
         Bus.$on('new-account', ()=> {
             this.user = user;
         })
+        axios.get('/article')
+        .then((res) => {
+            this.articles = res.data;
+        });
     },
     methods: {
         showLoginM () {

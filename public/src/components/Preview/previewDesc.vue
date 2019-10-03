@@ -1,14 +1,20 @@
 <template>
     <div id='container'>
-        <span class="title">Title</span>
-        <span class="desc">Desc</span>
-        <span class="author">Author</span>
-        <span class="price">Price</span>
+        <span class="title">{{this.article.title}}</span>
+        <span class="desc">{{this.article.preview}}</span>
+        <span class="author">{{this.article.author}}</span>
+        <span class="price">3</span>
     </div>
 </template>
 
 <script>
 export default {
+    props: {
+        article: {
+            type: Object,
+            required: true
+        }
+    }
 }
 </script>
 

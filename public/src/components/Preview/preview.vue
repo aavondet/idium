@@ -1,7 +1,7 @@
 <template>
     <div id='container'>
         <img src="../../../images/xrp.jpeg" alt="XRP">
-        <previewDesc></previewDesc>
+        <previewDesc :article='article'></previewDesc>
     </div>
 </template>
 
@@ -11,6 +11,12 @@ import previewDesc from './previewDesc.vue'
 export default {
     components: {
         previewDesc
+    },
+    props: {
+        article: {
+            type: Object,
+            required: true
+        }
     }
 }
 </script>
