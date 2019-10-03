@@ -36,7 +36,8 @@
     "node-fetch": "^2.6.0",
     "popper.js": "^1.14.7",
     "serve-favicon": "^2.5.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "ilp-protocol-spsp": "^3.0.0"
   },
   "devDependencies": {
     "css-loader": "^3.2.0",

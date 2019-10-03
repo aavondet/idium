@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var Account = require('../models/account');
+var account = require('../models/account');
 
 const accountRouter = express.Router();
 
@@ -8,12 +8,12 @@ accountRouter.use(bodyParser.json());
 
 accountRouter.route('/')
 .get((req, res, next) => {
-    account.find({})
+    account.find()
     .then((account) => {
         console.log('Gathered all accounts');
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.json(accounts);
+        res.json(account);
     }, (err) => next(err))
     .catch((err) => next(err));
 })
@@ -30,7 +30,7 @@ accountRouter.route('/')
 
 accountRouter.route('/:id')
 .get((req, res, next) => {
-    account.findById(req.params.id)
+    account.findOne({'username': req.params.id})
     .then((account) => {
         console.log('Gathered account with id: ' + req.params.id);
         res.statusCode = 200;
@@ -40,7 +40,7 @@ accountRouter.route('/:id')
     .catch((err) => next(err));
 })
 .put((req, res, next) => {
-    account.findByIdAndUpdate(req.params.id, req.body, { new : true})
+    account.findOneAndUpdate({'username': req.params.id}, req.body, { new : true})
     .then((account) => {
         console.log('Updated account ' + req.params.id + ' to ' + account);
         res.statusCode = 200;
@@ -50,7 +50,7 @@ accountRouter.route('/:id')
     .catch((err) => next(err));
 })
 .delete((req, res, next) => {
-    account.findByIdAndDelete(req.params.id)
+    account.findOneAndDelete(req.params.id)
     .then((account) => {
         console.log('account ' + req.params.id + ' deleted...');
         res.statusCode = 200;

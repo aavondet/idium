@@ -11,6 +11,7 @@ const app = express();
 // Routers
 const accountRouter = require('./app/routers/accountRouter'); 
 const articleRouter = require('./app/routers/articleRouter');
+const transferRouter = require('./app/routers/transferRouter');
 
 // PORT
 const PORT = process.env.PORT || 8080;
@@ -34,6 +35,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname+'/public'));
 app.use('/account', accountRouter);
 app.use('/article', articleRouter);
+app.use('/transfer', transferRouter);
 
 app.get('/', (req, res, next) => {
     res.sendFile('./public/index.html');
