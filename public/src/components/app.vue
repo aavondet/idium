@@ -30,7 +30,8 @@ export default {
         return {
             showLogin: false,
             showSignup: false,
-            showArticle: false
+            showArticle: false,
+            user: NULL
         }
     },
     mounted() {
@@ -38,6 +39,9 @@ export default {
         Bus.$on('showSignup', this.showSignupM);
         Bus.$on('closeLogin', this.closeLoginM);
         Bus.$on('closeSignup', this.closeSignupM);
+        Bus.$on('new-account', ()=> {
+            this.user = user;
+        })
     },
     methods: {
         showLoginM () {

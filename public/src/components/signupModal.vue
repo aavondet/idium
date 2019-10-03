@@ -62,8 +62,9 @@ export default {
                 address: this.address
             };
             axios.post(url, newUser)
-            .then((lunch) => {
+            .then((user) => {
                 Bus.$emit('closeSignup')
+                Bus.$emit('new-account', user)
             })
             .catch((err) => console.log(err))
         },
