@@ -1,18 +1,28 @@
 <template>
     <div id='app'>
-        <div class='container'>
-            TEST
-            <header></header>
-        </div>
+        <Header></Header>
+        <trending-collection></trending-collection>
+        <trending-collection></trending-collection>
+        <trending-collection></trending-collection>
     </div>
 </template>
 
 <script>
-import header from './header.vue'
+import Header from './header.vue'
+import Preview from './Preview/preview.vue'
+import TrendingCollection from './trendingCollection.vue'
 
 export default {
     components: {
-        header
+        Header,
+        TrendingCollection
     }
 }
 </script>
+
+<style scoped>
+#app {
+    height: 100%;
+    width: 100%;
+}
+</style>
