@@ -7,9 +7,7 @@ var article = new Schema({
         required : true
     },
     image : {
-        type : String,
-        required : true,
-        unique: true
+        type : String
     },
     views : {
         type : Number,
