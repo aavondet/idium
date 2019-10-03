@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var Article = require('../models/article');
+var article = require('../models/article');
 
 const articleRouter = express.Router();
 
