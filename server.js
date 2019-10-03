@@ -22,8 +22,9 @@ var db_pass = process.env.DB_PASS;
 // If using local server: localConfig.DB
 // If using MongoDB Atlas: 
 // mongodb+srv://<username>:<password>@cluster0-c14lf.gcp.mongodb.net/test?retryWrites=true
+
 mongoose.connect('mongodb+srv://' + db_user + ':' 
-    + db_pass + '@cluster0-c14lf.gcp.mongodb.net/test?retryWrites=true')
+    + db_pass + '@cluster0-c14lf.gcp.mongodb.net/admin?retryWrites=true&w=majority')
 .then(() => {
     console.log('Connected to Server');
 })
