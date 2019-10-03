@@ -32,6 +32,10 @@ var account = new Schema({
         type : Array,
         default: []
     },
+    topics: {
+        type: Array,
+        default: []
+    }
 },{
     collection : 'Accounts'
 })
