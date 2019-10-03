@@ -6,6 +6,14 @@ var account = new Schema({
         type : String,
         required : true
     },
+    ilp_pointer : {
+        type : String,
+        required : true
+    },
+    ilp_name : {
+        type : String,
+        required : true
+    },
     address : {
         type : String,
         required : true,
