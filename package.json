@@ -32,7 +32,7 @@
     "ilp-protocol-spsp": "^3.0.0",
     "ilp-protocol-stream": "^1.8.9",
     "image-webpack-loader": "^6.0.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash.camelcase": "^4.3.0",
     "mongoose": "^5.5.10",
     "node-fetch": "^2.6.0",
