@@ -35,7 +35,7 @@
     "jquery": "^3.4.1",
     "lodash.camelcase": "^4.3.0",
     "mongoose": "^5.5.10",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "popper.js": "^1.14.7",
     "request": "^2.88.0",
     "serve-favicon": "^2.5.0",
